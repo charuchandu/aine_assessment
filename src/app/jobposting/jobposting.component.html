@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 bg-white mt-4 pt-2" style="border-radius: 50px;padding:100px">
+            <p class="display-4 text-center text-primary">Post Job</p>
+            <form #ref="ngForm" (ngSubmit)="jobPost(ref)">
+                <div class="form-group">
+                    <label class="text-info" style="font-size: large;font-weight: bold" for="job">Job</label>
+                    <input type="text" name="job" id="job" class="form-control" autocomplete="off" ngModel>
+                </div>
+                <div class="form-group">
+                    <label class="text-info" style="font-size: large;font-weight: bold" for="salary">Salary</label>
+                    <input type="text" name="salary" id="salary" class="form-control" autocomplete="off" ngModel>
+                </div>
+                <div class="form-group">
+                    <label class="text-info" style="font-size: large;font-weight: bold" for="qualification">Qualification</label>
+                    <input type="text" name="qualification" id="qualification" class="form-control" autocomplete="off" ngModel>
+                </div>
+                <button type="submit" class="btn btn-info d-block mx-auto">Add</button>
+            </form>
+        </div>
+        <div class="col-sm-3 text-right pr-4 mt-0">
+            <img [src]="photo" width="100px" height="100px" style="border-radius:50%;float:center">
+            <h4 class="text-capitalize text-white mt-1" style="font-size:20px">welcome {{username}}</h4>
+            <p class="text-white" style="font-size:15px">Mail : {{email}}</p>
+            <button class="btn btn-warning" (click)="click($event)">LogOut</button>
+        </div>
+    </div>
+</div>

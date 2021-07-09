@@ -1,0 +1,26 @@
+<div style="float: right" class="mr-4">
+    <button  *ngIf="!isLogedIn"  type="submit" class="btn btn-dark" (click)="click1($event)">SignIn</button>
+    <button *ngIf="isLogedIn" class="btn btn-dark" (click)="click2($event)">SignOut</button>
+</div>
+<div style="margin-top: 50px">
+<div *ngFor="let n of notifications" style="margin-left:200px">
+       <div class="card mb-2" style="border:2px rgb(185, 184, 184) solid;width:1100px;border-radius: 10px;box-shadow:grey 3px 1px 3px 1px">
+          <div class="card-header text-capitalize" style="display: flex;justify-content: space-between">
+              <h6>{{n.job}}</h6>
+              <p>Posted on:{{n.date}}</p>
+           </div>
+        <div class="card-body text-capitalize">
+            <table style="width:100%">
+                <tr>
+                    <td class="text-right">Company :</td>
+                    <td style="font-weight: bold">{{n.company}}</td>
+                    <td class="text-right">salary :</td>
+                    <td style="font-weight: bold">{{n.salary}}</td>
+                    <td class="text-right">Qualification :</td>
+                    <td style="font-weight: bold">{{n.qualification}}</td>
+                </tr>
+            </table>
+        </div>
+</div>
+</div>
+
