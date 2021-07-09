@@ -11,14 +11,11 @@ app.use(exp.static(path.join(__dirname,'./dist/jobportal')));
 const employerApiObj=require("./apis/employerapi");
 const jobApiObj=require("./apis/jobapi");
 const seekerApiObj=require("./apis/seekerapi");
-//const productApiObj=require("./apis/productapi");
-// const cartApiObj=require("./apis/cartapi");
 
 //redirecting to apis
 app.use("/employer",employerApiObj);
 app.use("/job",jobApiObj);
 app.use("/seeker",seekerApiObj);
-// app.use("/cart",cartApiObj);
 
 //err handling
 app.use((req,res,next)=>{
@@ -37,13 +34,11 @@ mongoclient.connect(dbUrl,{useNewUrlParser:true,useUnifiedTopology:true})
     const employerCollectionObject=dbObj.collection("employercollection");
     const jobCollectionObject=dbObj.collection("jobcollection");
     const seekerCollectionObject=dbObj.collection("seekercollection");
-    // const cartCollectionObject=dbObj.collection("cartcollection");
     
     //add collection object to app object
     app.set("employerCollectionObject",employerCollectionObject);
     app.set("jobCollectionObject",jobCollectionObject);
     app.set("seekerCollectionObject",seekerCollectionObject);
-    // app.set("cartCollectionObject",cartCollectionObject);
     console.log("db connected successfully")
 
     
